@@ -18,16 +18,17 @@ while True:
 			print(line)
 			if "PING" in line:
 				s.send(line.replace("PING", "PONG"))
+				sendMessage(s, "I just recieved a ping, and sent back a pong!")
 				break
 			user = getUser(line)
-			message = getMessage(line)
+			message.upper() = getMessage(line)
 			print user + " typed :" + message
-			#You suck
-			if "You suck" in message:
-				sendMessage(s, "No, you suck!")
+			#You suck and bad
+			if "You suck" in message in message:
+				sendMessage(s, "No, you suck!" + user)
 				break
 			#trade
-			if "!trade" in message:
+			if "!TRADE" in message:
 				sendMessage(s, "Fahkzy's trade link: https://steamcommunity.com/tradeoffer/new/?partner=65390294&token=efmHK3WH")
 				break
 			#Help Command
@@ -35,5 +36,9 @@ while True:
 				sendMessage(s, "All commands are case sensitive.")
 				sendMessage(s, "I am a lazy developer.")
 				sendMessage(s, "The current commands:")
-				sendMessage(s, "!help, !trade")
+				sendMessage(s, "!help, !trade, ")
+				break
+			#Hai
+			if "Hi" in message:
+				sendMessage(s, "Hai I'm a bot!")
 				break
